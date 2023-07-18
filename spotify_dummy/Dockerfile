@@ -14,7 +14,7 @@ RUN pip install -r requirements.txt
 COPY . /app/
 
 # Set environment variables, if needed
-ENV DJANGO_SETTINGS_MODULE=myproject.settings
+ENV DJANGO_SETTINGS_MODULE=spotify_dummy.settings
 
 # Expose the port that the Django server will run on
 EXPOSE 8000
