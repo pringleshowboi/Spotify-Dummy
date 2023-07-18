@@ -1,0 +1,17 @@
+<form action="{% url 'user_auth:register' %}" method="post">
+    {% csrf_token %}
+	
+    <label>Username</label>
+    <input type="text" name="username" placeholder="User" required>
+    <br/><br/>
+
+    <label>Password</label>
+    <input type="password" name="password" required>
+    <br/><br/>
+
+    <input type="submit" value="Register" />
+</form>
+
+{% if error_message %}
+    <p>{{ error_message }}</p>
+{% endif %}

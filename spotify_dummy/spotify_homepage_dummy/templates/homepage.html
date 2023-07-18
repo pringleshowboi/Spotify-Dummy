@@ -1,0 +1,7 @@
+{% for item in playlist%}
+
+    <h2>{{ item.name }} </h2>
+    <p>{{ item.vibe }} </p>
+    <a href="{% url 'spotify_homepage_dummy:songs' playlist_id=item.id %}">SONGS</a>
+
+{% endfor %}
