@@ -13,5 +13,11 @@ RUN pip install -r requirements.txt
 # Copy the entire project directory to the working directory
 COPY . /app/
 
+# Set environment variables, if needed
+ENV DJANGO_SETTINGS_MODULE=myproject.settings
+
+# Expose the port that the Django server will run on
+EXPOSE 8000
+
 # Set the command to run the Django server
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
