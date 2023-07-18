@@ -5,8 +5,13 @@ FROM python:3.9
 WORKDIR /app
 
 # Copy the code files to the working directory
-COPY inventory.py /app/inventory.py
-COPY user.txt /app/
+COPY requirements.txt /app/
 
-# Set the command to run the code
-CMD ["python", "inventory.py"]
+# Install project dependencies
+RUN pip install -r requirements.txt
+
+# Copy the entire project directory to the working directory
+COPY . /app/
+
+# Set the command to run the Django server
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
